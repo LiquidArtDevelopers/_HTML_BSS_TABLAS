@@ -340,7 +340,7 @@ section article:nth-child(4){
     width: 450px;
     padding: 30px;
     border-radius: 5px;
-    background-color: #353535;
+    background-color: rgba(0,0,0,0.9);
     position: absolute;
     top: 0;
     box-sizing: border-box;
