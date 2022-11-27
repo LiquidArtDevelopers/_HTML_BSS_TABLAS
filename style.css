@@ -314,9 +314,15 @@ th{
     height: 50px;
 }
 
-
+section article:nth-child(4){
+    margin-top: 360px;
+}
 .slider{
     width: 100%;
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .slider input{
     display: none;
@@ -349,7 +355,7 @@ th{
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
-    border: 2px solid #3B344D;
+    border: 2px solid rgb(255, 181, 70);
 }
 .testimonials .item p{
     color: #ddd;
@@ -396,6 +402,14 @@ th{
 #t-5:checked ~ .testimonials label[for="t-2"]{
     transform: translate3d(600px, 0, -180px) rotateY(-25deg);
     z-index: 2;
+    opacity: .5;
+}
+#t-1:checked ~ .testimonials label[for="t-4"],
+#t-2:checked ~ .testimonials label[for="t-5"],
+#t-3:checked ~ .testimonials label[for="t-1"],
+#t-4:checked ~ .testimonials label[for="t-2"],
+#t-5:checked ~ .testimonials label[for="t-3"]{
+    opacity: .5;
 }
 #t-1:checked ~ .testimonials label[for="t-2"],
 #t-2:checked ~ .testimonials label[for="t-3"],
