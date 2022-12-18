@@ -290,22 +290,18 @@ a:hover{
 .tabla{
     width: 100%;
     height: 100%;
-    border: hidden;
+    border: hidden; /* le quitamos el borde por defecto a la tabla */
     border-spacing: 0; /* quita los bordes interiores que pone por defecto la tabla  */
-    border-collapse: collapse; /* permite poner bordes interiores */
     border-bottom: 1px solid black; /* la damos borde botton a la tabla */
 
     font-family: sans-serif;
     font-size: 13px;
 }
-.fila-sombreada{
-    background-color: darkgray;
-}
 .col01{
     width: 10%;
 }
-tr{
-    border: 1px solid black; /* le damos borde a las filas */
+tr:nth-child(even){ /* los tr pares se sombrean */
+    background-color: darkgray;
 }
 td{
     padding: 0 5px;
