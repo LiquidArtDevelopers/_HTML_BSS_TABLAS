@@ -264,6 +264,7 @@
                                 </div>
                                 <div class="bloque-tabla">
                                     <table class="tabla">
+                                        <?php ?>
                                         <tr>
                                             <th class="col01">Pos. <br> gen.</th>
                                             <th>Nombre</th>
