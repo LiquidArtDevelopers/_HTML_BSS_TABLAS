@@ -198,12 +198,11 @@
                                         </tr>
                                         <?php 
                                         include "./php/_conexion.php";
-                                        $sql="SELECT `id_resultado`, `nombre`, `tiempo` FROM `resultados_mujer` ORDER BY tiempo ASC LIMIT 11;";
+                                        $sql="SELECT `id_resultado`, `nombre`, `tiempo` FROM `resultados_mujer` ORDER BY tiempo ASC LIMIT 10;";
                                         $resultado=mysqli_query($con, $sql);
-                                        $fila=mysqli_fetch_assoc($resultado);
                                         $puesto = 1;
                                         if (mysqli_num_rows($resultado) > 0) {
-                                            while($fila = mysqli_fetch_assoc($resultado)){                                                
+                                            while($fila = mysqli_fetch_array($resultado)){                                                
                                                 ?>
                                                 <tr>
                                                     <td><?= $puesto ?></td>
