@@ -196,56 +196,25 @@
                                             <th>Nombre</th>
                                             <th>Tiempo</th>
                                         </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>NURIA LUGUEROS</td>
-                                            <td>01:11:38</td>
-                                        </tr>
-                                        <tr class="fila-sombreada"> 
-                                            <td>2</td>
-                                            <td>DIANA MARTÍN GIMÉNEZ</td>
-                                            <td>01:11:52</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>GISELA CARRION BERTRAN</td>
-                                            <td>01:12:01</td>
-                                        </tr>
-                                        <tr class="fila-sombreada">
-                                            <td>4</td>
-                                            <td>ELENA SOLVESTRE SORIANO</td>
-                                            <td>01:15:19</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>PAULA MAYOBRE GONZÁLEZ</td>
-                                            <td>01:12:54</td>
-                                        </tr>
-                                        <tr class="fila-sombreada">
-                                            <td>6</td>
-                                            <td>ESTHER RAMOS MARTÍNEZ</td>
-                                            <td>01:13:26</td>
-                                        </tr>
-                                        <tr>
-                                            <td>7</td>
-                                            <td>AROA MERINO BETACOR</td>
-                                            <td>01:14:09</td>
-                                        </tr>
-                                        <tr class="fila-sombreada">
-                                            <td>8</td>
-                                            <td>SARA ALONSO MARTÍNEZ</td>
-                                            <td>01:14:26</td>
-                                        </tr>
-                                        <tr>
-                                            <td>9</td>
-                                            <td>YOLANDA MARTÍN RAMOS</td>
-                                            <td>01:14:43</td>
-                                        </tr>
-                                        <tr class="fila-sombreada">
-                                            <td>10</td>
-                                            <td>GEBRIALA YOWHANS BARAKI</td>
-                                            <td>01:15:03</td>
-                                        </tr>
+                                        <?php 
+                                        include "./php/_conexion.php";
+                                        $sql="SELECT `id_resultado`, `nombre`, `tiempo` FROM `resultados_mujer` ORDER BY tiempo ASC LIMIT 11;";
+                                        $resultado=mysqli_query($con, $sql);
+                                        $fila=mysqli_fetch_assoc($resultado);
+                                        $puesto = 1;
+                                        if (mysqli_num_rows($resultado) > 0) {
+                                            while($fila = mysqli_fetch_assoc($resultado)){                                                
+                                                ?>
+                                                <tr>
+                                                    <td><?= $puesto ?></td>
+                                                    <td><?= $fila["nombre"] ?></td>
+                                                    <td><?= $fila["tiempo"] ?></td>
+                                                </tr>
+                                                <?php
+                                                $puesto += 1;
+                                            }
+                                        }
+                                        ?>
                                     </table>
                                 </div>
                             </div>
@@ -264,7 +233,6 @@
                                 </div>
                                 <div class="bloque-tabla">
                                     <table class="tabla">
-                                        <?php ?>
                                         <tr>
                                             <th class="col01">Pos. <br> gen.</th>
                                             <th>Nombre</th>
